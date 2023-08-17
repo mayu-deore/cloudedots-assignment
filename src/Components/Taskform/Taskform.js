@@ -1,29 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const TaskForm = ({ onAddTask }) => {
+const TaskForm = ({ onAddTask, onUpdateTask, editingTask, users }) => {
   const [task, setTask] = useState('');
+  const [selectedUser, setSelectedUser] = useState('');
+
+  useEffect(() => {
+    if (editingTask) {
+      setTask(editingTask.content);
+      setSelectedUser(editingTask.user);
+    }
+  }, [editingTask]);
 
   const handleTaskChange = (event) => {
     setTask(event.target.value);
   };
 
-  const handleAddTask = (event) => {
+  const handleUserChange = (event) => {
+    setSelectedUser(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (task.trim() !== '') {
-      onAddTask(task);
+    if (task.trim() !== '' && selectedUser) {
+      if (editingTask) {
+        onUpdateTask({ id: editingTask.id, content: task, user: selectedUser });
+      } else {
+        onAddTask({ content: task, user: selectedUser });
+      }
       setTask('');
+      setSelectedUser('');
     }
   };
 
   return (
-    <form onSubmit={handleAddTask}>
-      <input
+    <form onSubmit={handleSubmit} style={{gap:"10px", flexWrap:"wrap"}}>
+      <textarea
+      className='input-task'
+      style={{ width: "100%", height: "100px", fontSize: "25px" }}
         type="text"
         placeholder="Enter task"
         value={task}
         onChange={handleTaskChange}
       />
-      <button type="submit">Add Task</button>
+      <select value={selectedUser} onChange={handleUserChange} className='assignto_div'>
+        <option value="">Assign To</option>
+        {users.map((user) => (
+          <option key={user.id} value={user.name}>
+            {user.name}
+          </option>
+        ))}
+      </select>
+      <button className='add-task' style={{width:"150px", padding:"10px", }} type="submit">{editingTask ? 'Update Task' : 'Add Task'}</button>
     </form>
   );
 };

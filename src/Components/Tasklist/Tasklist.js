@@ -7,7 +7,7 @@ const TaskList = ({ tasks, onDeleteTask, onEditTask, users }) => {
     <div>
       <div >
       {tasks.map((task) => (
-        <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexWrap:"wrap", gap:"10px", marginBottom:"10px"}}>
+        <div className='task-list-div'>
         <div className='tasklist-div' key={task.id} style={{display:"flex",alignItems:"center",justifyContent:"space-between", width:"100%"}}    >
           <h3 style={{margin:"0px"}}>
           {task.content} 

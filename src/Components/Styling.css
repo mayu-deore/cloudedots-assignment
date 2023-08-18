@@ -24,10 +24,22 @@ body {
   
   input[type="text"] {
     padding: 8px;
-    width: 60%;
-    border: 1px solid #ccc;
+    width: 100%;
+    /* border: 1px solid #ccc; */
     border-radius: 4px;
+    /* font-size: 25px ; */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    /* border-radius: 4px; */
+    height: 50px;
   }
+
+  .todo-app-heading {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
   
   button {
     padding: 8px 15px;
@@ -76,16 +88,23 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
-    width: 200px;
+    width: 130px;
+    border-radius: 15px;
+    font-size: 17px;
   }
 
   .input-task{
+    height: 50px;
+    width: 400px;
+    padding: 10px;
+    font-size: 17px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px;
+    border-radius: 15px;
+
   }
 
+  
   .input-task:focus{
     outline: none;
   }
@@ -96,28 +115,47 @@ body {
     padding-right: 100px;
   }
 
-  @media screen and (max-width: 600px){
-    .tas-app-div-main{
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-  }
+  
 
   .add-task{
-    background-color: #008000ad;
+    background-color: rgb(55, 144, 55);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
   }
 
   .add-task:hover{
-    background-color: green;
+    background-color: #d51ef1ad;
   }
 
   .edit-button:hover{
-    background-color: blue;
+    background-color: #d51ef1ad;
   }
 
   .delet-button{
     background-color:#ff0000a3
   }
   .delet-button:hover{
-    background-color: red;
+    background-color: #d51ef1ad;
+  }
+
+  .task-list-div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+     gap:10px;
+      margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 600px){
+    .task-list-div{
+       flex-wrap: wrap;
+      }
+      .tas-app-div-main{
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .input-task{
+        width: 100%;
+       }
   }

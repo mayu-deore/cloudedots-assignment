@@ -41,7 +41,9 @@ function TaskApp() {
 
   return (
     <div className='tas-app-div-main'>
-      <h1>To-Do App</h1>
+      <div className='todo-app-heading'>
+      <h1 style={{width:"200px", backgroundColor:"rgb(231 74 177)", borderRadius:"15px", padding:"5px"}}>To-Do App</h1>
+      </div>
       <TaskForm
         onAddTask={addTask}
         onUpdateTask={updateTask}

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cloudedots-assignment/static/css/main.fe9b136d.css",
+    "main.js": "/cloudedots-assignment/static/js/main.773bdd6d.js",
+    "static/js/787.e2a31112.chunk.js": "/cloudedots-assignment/static/js/787.e2a31112.chunk.js",
+    "static/media/logo.svg": "/cloudedots-assignment/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/cloudedots-assignment/index.html",
+    "main.fe9b136d.css.map": "/cloudedots-assignment/static/css/main.fe9b136d.css.map",
+    "main.773bdd6d.js.map": "/cloudedots-assignment/static/js/main.773bdd6d.js.map",
+    "787.e2a31112.chunk.js.map": "/cloudedots-assignment/static/js/787.e2a31112.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe9b136d.css",
+    "static/js/main.773bdd6d.js"
+  ]
+}
